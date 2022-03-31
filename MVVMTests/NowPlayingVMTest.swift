@@ -17,15 +17,7 @@ class MVVMTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
     
-    func test_BaseUrl(){
-        XCTAssertEqual(Endpoints.baseurl, "https://api.themoviedb.org/3/")
-    }
- 
-    func test_API_Key(){
-        XCTAssertEqual(Api_Key.key, "a07e22bc18f5cb106bfe4cc1f83ad8ed")
-    }
 
     func test_EmptyMovieArray(){
         let sut = NowPlayingVM()
