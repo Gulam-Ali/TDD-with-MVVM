@@ -26,6 +26,7 @@ class NowPlayingVM{
     
     //MARK: Get Now playing movies
     func getNowPlayingMovies(){
+        Loader.showUniversalLoadingView(true)
         let serverURL = Endpoints.baseurl + Endpoints.getnowPlayingMovie
         Networking.shared.MakeGetRequest(Url: serverURL) { [self] (result : Result<NowplayingModel,CustomError>) in
         
@@ -47,6 +48,9 @@ class NowPlayingVM{
     
     //MARK: Handle API errors
     private func HandleAPIfailureCases(cases:CustomError){
+        DispatchQueue.main.async {
+            Loader.showUniversalLoadingView(false)
+        }
         switch cases {
         case .noInternet:
             print("No internet connection")
@@ -65,6 +69,9 @@ class NowPlayingVM{
     
     //MARK: Handle success case
     func HandleAPIsuccess(movies:[resultsModel]){
+        DispatchQueue.main.async {
+            Loader.showUniversalLoadingView(false)
+        }
         if checkifMovieArrayEmpty(movies: movies) == true{
             //Array is empty
             delegate.GotEmptyMovieArray()
@@ -82,7 +89,6 @@ class NowPlayingVM{
         }else{
             return true
         }
-        
     }
     
 
