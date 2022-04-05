@@ -24,6 +24,13 @@ class NowPlayingVM{
     var Movies:[resultsModel] = [resultsModel]()
     weak var delegate : NowPlayingProtocol!
     
+    var eligibleCriteria: EligibilityCriteriaProtocol
+    
+    init(eligible: EligibilityCriteriaProtocol) {
+        self.eligibleCriteria = eligible
+    }
+    
+    
     //MARK: Get Now playing movies
     func getNowPlayingMovies(){
         Loader.showUniversalLoadingView(true)
@@ -104,6 +111,15 @@ class NowPlayingVM{
          return ratingDescending
     }
 
+    //MARK: Book ticket
+    func checkTicketStatus() -> String{
+        if eligibleCriteria.checkIfUserIseligibletoBookTicket(){
+            return "Book Now"
+        }else{
+            return "Sold Out"
+        }
+    }
+    
     
     
 }

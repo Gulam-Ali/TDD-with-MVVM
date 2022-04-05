@@ -20,13 +20,13 @@ class MVVMTests: XCTestCase {
     
 
     func test_EmptyMovieArray(){
-        let sut = NowPlayingVM()
+        let sut = NowPlayingVM(eligible: dummyEligibleCriteria())
         let mockResult = NowplayingModel(results: [])
         XCTAssertTrue(sut.checkifMovieArrayEmpty(movies: mockResult.results!))
     }
     
     func test_DescendingOrderMovies(){
-        let sut = NowPlayingVM()
+        let sut = NowPlayingVM(eligible: dummyEligibleCriteria())
         sut.delegate = self
         let result1 = resultsModel(adult: nil, backdrop_path: nil, id: nil, overview: nil, poster_path: nil, title: nil, vote_average: 3.9, vote_count: nil)
         let result2 = resultsModel(adult: nil, backdrop_path: nil, id: nil, overview: nil, poster_path: nil, title: nil, vote_average: 5.5, vote_count: nil)
@@ -34,9 +34,22 @@ class MVVMTests: XCTestCase {
         XCTAssertEqual([result2,result1], sut.FilterMoviesByRating(movies: Mockresults))
     }
     
+    func test_CheckTicketState(){
+        let sut = NowPlayingVM(eligible: dummyEligibleCriteria())
+        XCTAssertEqual("Sold Out", sut.checkTicketStatus())
+    }
     
     
 }
 
+
 extension MVVMTests : NowPlayingProtocol{}
 
+class dummyEligibleCriteria : EligibilityCriteriaProtocol{
+    
+    func checkIfUserIseligibletoBookTicket() -> Bool {
+        return false
+    }
+    
+    
+}

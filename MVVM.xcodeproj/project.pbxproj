@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA5E289B27FC453500DE65F7 /* EligiblityCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5E289A27FC453500DE65F7 /* EligiblityCriteria.swift */; };
 		EA77A66E27F41BAD00B4B97C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA77A66D27F41BAD00B4B97C /* AppDelegate.swift */; };
 		EA77A67027F41BAD00B4B97C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA77A66F27F41BAD00B4B97C /* SceneDelegate.swift */; };
 		EA77A67527F41BAD00B4B97C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA77A67327F41BAD00B4B97C /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA5E289A27FC453500DE65F7 /* EligiblityCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EligiblityCriteria.swift; sourceTree = "<group>"; };
 		EA77A66A27F41BAD00B4B97C /* MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA77A66D27F41BAD00B4B97C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA77A66F27F41BAD00B4B97C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,9 +103,10 @@
 			isa = PBXGroup;
 			children = (
 				EA77A68927F42AED00B4B97C /* Helpers */,
-				EA77A68327F4243B00B4B97C /* ViewModel */,
-				EA77A68227F4243400B4B97C /* View */,
 				EA77A68127F4242C00B4B97C /* Model */,
+				EA77A68227F4243400B4B97C /* View */,
+				EA77A68327F4243B00B4B97C /* ViewModel */,
+				EA77A68527F4246200B4B97C /* Controller */,
 				EA77A66D27F41BAD00B4B97C /* AppDelegate.swift */,
 				EA77A66F27F41BAD00B4B97C /* SceneDelegate.swift */,
 				EA77A67627F41BB000B4B97C /* Assets.xcassets */,
@@ -125,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				EA77A68627F4257200B4B97C /* Cells */,
-				EA77A68527F4246200B4B97C /* Controller */,
 				EA77A68427F4245800B4B97C /* Storyboards */,
 			);
 			path = View;
@@ -171,6 +173,7 @@
 				EA77A68E27F42ED100B4B97C /* Constant.swift */,
 				EA77A69027F42F0400B4B97C /* ImageCache.swift */,
 				EA77A69227F42F2A00B4B97C /* Loader.swift */,
+				EA5E289A27FC453500DE65F7 /* EligiblityCriteria.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			files = (
 				EA77A68B27F42B3500B4B97C /* CommonFunc.swift in Sources */,
 				EA77A69B27F4308D00B4B97C /* Networking.swift in Sources */,
+				EA5E289B27FC453500DE65F7 /* EligiblityCriteria.swift in Sources */,
 				EA77A66E27F41BAD00B4B97C /* AppDelegate.swift in Sources */,
 				EA77A68827F425C000B4B97C /* NowPlayingCell.swift in Sources */,
 				EA77A68D27F42B9F00B4B97C /* NowPlayingVC.swift in Sources */,
@@ -526,6 +530,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tdd-demo.gulamAli.MVVMTests";
@@ -543,6 +548,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tdd-demo.gulamAli.MVVMTests";

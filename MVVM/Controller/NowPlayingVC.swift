@@ -12,7 +12,7 @@ class NowPlayingVC: UIViewController {
     
     @IBOutlet weak var tblview: UITableView!
     
-    private let nowPlayingViewModel = NowPlayingVM()
+    private let nowPlayingViewModel = NowPlayingVM(eligible: EligibilityCriteria())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class NowPlayingVC: UIViewController {
         tblview.dataSource = self
         tblview.tableFooterView = UIView()
     }
-    
+
 
 }
 
