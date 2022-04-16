@@ -51,5 +51,4 @@ class dummyEligibleCriteria : EligibilityCriteriaProtocol{
         return false
     }
     
-    
 }
