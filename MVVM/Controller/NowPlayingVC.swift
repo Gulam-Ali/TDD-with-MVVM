@@ -16,8 +16,7 @@ class NowPlayingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nowPlayingViewModel.delegate = self
-        nowPlayingViewModel.getNowPlayingMovies()
+        fetchNowPlayingMovies()
         SetupTableView()
     }
     
@@ -25,6 +24,11 @@ class NowPlayingVC: UIViewController {
         tblview.delegate = self
         tblview.dataSource = self
         tblview.tableFooterView = UIView()
+    }
+    
+    private func fetchNowPlayingMovies(){
+        nowPlayingViewModel.delegate = self
+        nowPlayingViewModel.getNowPlayingMovies()
     }
 
 
